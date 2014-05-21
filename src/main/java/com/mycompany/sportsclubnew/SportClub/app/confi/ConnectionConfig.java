@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @author Roman
  */
 @Configuration
-@ComponentScan("com.kabaso.askweb")
+@ComponentScan("com.myCompany.sportsclubnew")
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "com.kabaso.askweb.respository")
 public class ConnectionConfig {
@@ -30,9 +30,10 @@ public class ConnectionConfig {
     public DataSource dataSource() {
         BasicDataSource ds = new org.apache.commons.dbcp.BasicDataSource();
         ds.setDriverClassName("org.apache.derby.jdbc.ClientDriver");
-        ds.setUrl("jdbc:derby://localhost:1527/sample");
-        ds.setUsername("app");
-        ds.setPassword("app");
+        ds.setUrl("jdbc:derby://localhost:1527/webShizz[adminMoses on ADMINMOSES]");
+        ds.setUsername("adminMoses");
+        ds.setPassword("admin");
+        
         return ds;
     }
 

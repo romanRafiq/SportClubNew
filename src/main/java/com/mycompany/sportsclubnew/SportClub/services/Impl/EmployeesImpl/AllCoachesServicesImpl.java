@@ -5,11 +5,8 @@
 package com.sportsClub.services.Impl.EmployeesImpl;
 
 import com.Model.classes.ImmutableClasses.Employees.Coach;
-import com.sportsClub.repository.CoachRepository;
-import com.sportsClub.repository.EmployeesRepository;
 import com.sportsClub.services.employeeServices.AllCoachesService;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
