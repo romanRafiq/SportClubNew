@@ -5,7 +5,7 @@
 package com.SportClub.repository;
 
 import com.Model.classes.ImmutableClasses.PlayerRecords.Batsman_runs;
-
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
