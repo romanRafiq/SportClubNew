@@ -41,7 +41,7 @@ public class Rugby_list_test {
         Rugby_list soccer_list_Obj = new Rugby_list(rugby_player_list);
         
         //Object To be added
-       Rugby_player player = new Rugby_player( 900125,"Fiki","Roman",convertDate("1990-01-10"), "A", 23, "Wing");        
+       Rugby_player player = new Rugby_player( "900125","Fiki","Roman",convertDate("1990-01-10"), "A", 23, "Wing");        
        
        
        //Size is zero

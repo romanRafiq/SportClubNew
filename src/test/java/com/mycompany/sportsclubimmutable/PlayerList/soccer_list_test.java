@@ -42,7 +42,7 @@ public class soccer_list_test {
         soccer_list soccer_list_Obj = new soccer_list(Soccer_players_list);
         
         //Object To be added
-       Soccer_player soccer_player = new Soccer_player( 900125,"Fiki","Roman",convertDate("1990-01-10"), "A", 23, "Striker","Right");        
+       Soccer_player soccer_player = new Soccer_player( "900125","Fiki","Roman",convertDate("1990-01-10"), "A", 23, "Striker","Right");        
        
        
        //Size is zero

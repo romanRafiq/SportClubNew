@@ -41,7 +41,7 @@ public class Cricket_list_test {
         Cricket_list soccer_list_Obj = new Cricket_list(cricket_player_list);
         
         //Object To be added
-       Cricket_player player = new Cricket_player( 900125,"Fiki","Roman",convertDate("1990-01-10"), "A", 23, "Right");        
+       Cricket_player player = new Cricket_player( "900125","Fiki","Roman",convertDate("1990-01-10"), "A", 23, "Right");        
        
        
        //Size is zero

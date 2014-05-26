@@ -6,7 +6,7 @@ package com.mycompany.sportsclubimmutable.PlayerRecords;
  * and open the template in the editor.
  */
 
-import com.AppConfig.AppConfig;
+//import com.AppConfig.AppConfig;
 import com.Model.classes.ImmutableClasses.PlayerRecords.Batsman_runs;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
