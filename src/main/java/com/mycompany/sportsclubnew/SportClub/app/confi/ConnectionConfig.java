@@ -2,7 +2,6 @@
 package com.kabaso.askweb.app.conf;
 
 import javax.sql.DataSource;
-import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -43,7 +42,7 @@ public class ConnectionConfig {
         LocalContainerEntityManagerFactoryBean lef = new LocalContainerEntityManagerFactoryBean();
         lef.setDataSource(dataSource);
         lef.setJpaVendorAdapter(jpaVendorAdapter);
-        lef.setPackagesToScan("com.kabaso.askweb.domain");
+        lef.setPackagesToScan("com.myCompany.sportsclubnew");
         return lef;
     }
 

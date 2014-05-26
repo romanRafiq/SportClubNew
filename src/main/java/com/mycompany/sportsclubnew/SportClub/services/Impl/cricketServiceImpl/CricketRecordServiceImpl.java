@@ -5,7 +5,7 @@
 package com.sportsClub.services.Impl.cricketServiceImpl;
 
 import com.Model.classes.ImmutableClasses.Sport_records.Cricket_records;
-import com.sportsClub.repository.CricketRecordsRepository;
+import com.SportClub.repository.CricketRecordsRepository;
 import com.sportsClub.services.cricketServices.CricketRecordSevice;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

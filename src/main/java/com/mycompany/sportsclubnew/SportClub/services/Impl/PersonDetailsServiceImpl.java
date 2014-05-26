@@ -5,7 +5,7 @@
 package com.sportsClub.services.Impl;
 
 import com.Model.classes.ImmutableClasses.Person;
-import com.sportsClub.repository.PersonRepository;
+import com.SportClub.repository.PersonRepository;
 import com.sportsClub.services.PersonDetailsService;
 import java.util.ArrayList;
 import java.util.List;

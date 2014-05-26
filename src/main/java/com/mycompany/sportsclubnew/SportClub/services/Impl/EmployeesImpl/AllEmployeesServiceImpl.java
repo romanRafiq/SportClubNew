@@ -5,8 +5,7 @@
 package com.sportsClub.services.Impl.EmployeesImpl;
 
 import com.Model.classes.ImmutableClasses.Employees.Other_Employees;
-import com.sportsClub.repository.CricketRecordsRepository;
-import com.sportsClub.repository.EmployeesRepository;
+import com.SportClub.repository.EmployeesRepository;
 import com.sportsClub.services.employeeServices.AllEmployeesService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

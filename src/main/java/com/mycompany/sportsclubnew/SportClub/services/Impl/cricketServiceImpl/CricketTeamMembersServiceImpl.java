@@ -5,7 +5,7 @@
 package com.sportsClub.services.Impl.cricketServiceImpl;
 
 import com.Model.classes.ImmutableClasses.Players.Cricket_player;
-import com.sportsClub.repository.CricketPlayerRepository;
+import com.SportClub.repository.CricketPlayerRepository;
 import com.sportsClub.services.cricketServices.CricketTeamMembersService;
 import java.util.ArrayList;
 import java.util.List;

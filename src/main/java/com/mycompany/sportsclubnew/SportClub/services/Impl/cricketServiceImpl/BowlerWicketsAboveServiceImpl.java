@@ -5,7 +5,7 @@
 package com.sportsClub.services.Impl.cricketServiceImpl;
 
 import com.Model.classes.ImmutableClasses.PlayerRecords.BowlerWickets;
-import com.sportsClub.repository.BowlerRepository;
+import com.SportClub.repository.BowlerRepository;
 import com.sportsClub.services.cricketServices.BowlerWicketsAboveService;
 import java.util.ArrayList;
 import java.util.List;

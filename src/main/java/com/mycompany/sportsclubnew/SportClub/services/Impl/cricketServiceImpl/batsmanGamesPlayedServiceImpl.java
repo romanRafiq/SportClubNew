@@ -5,7 +5,7 @@
 package com.sportsClub.services.Impl.cricketServiceImpl;
 
 import com.Model.classes.ImmutableClasses.PlayerRecords.Batsman_runs;
-import com.sportsClub.repository.BatsmanRepository;
+import com.SportClub.repository.BatsmanRepository;
 import com.sportsClub.services.cricketServices.BatsmansGamesPlayedService;
 import java.util.ArrayList;
 import java.util.List;
