@@ -1,4 +1,4 @@
-package com.mycompany.sportsclubimmutable.domainTest;
+package com.sportsclubimmutable.domainTest;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -4,11 +4,9 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.sportsclubimmutable.domainTest.Players;
+package com.sportsclubimmutable.domainTest.PlayerRecords;
 
-import com.sportClub.domain.Model.classes.ImmutableClasses.Players.Rugby_player;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.sportClub.domain.Model.classes.ImmutableClasses.PlayerRecords.goal_Scorers;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -21,35 +19,28 @@ import org.testng.annotations.Test;
  *
  * @author Roman
  */
-public class Rugby_player_test {
+public class GoalScorers_test {
+    private static goal_Scorers goal_scorers;
     
-    
-     private static Rugby_player player;
-    
-    private Date date;
-    
-    public Rugby_player_test() {
+    public GoalScorers_test() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-    public void testImmutable() {     
-        
-        player = new Rugby_player( "900125","Imo","Sturks",convertDate("1990-01-10"), "A", 21, "Wing");
+    public void testImmutable() {                
+        goal_scorers = new goal_Scorers("Rafiq","Roman",5,20);
         
         //Test the object was created
-        Assert.assertEquals(player.getName(),"Imo","Error names werent the same"); 
-        Assert.assertEquals(player.getDOB(),convertDate("1990-01-10"), "Dates aren't the same");
+        Assert.assertEquals(goal_scorers.getName(),"Rafiq","Error names werent the same");                                     
     }    
-        
    
     @Test
     public void ObjectsAreNotTheSame() {                
         //Test objects aren't the same
-       player = new Rugby_player( "900125","Imo","Sturks",convertDate("1990-01-10"), "A", 21, "Wing");
-        Assert.assertNotSame(player,player.updateDivision("B"),"The Objects are the same");            
+       goal_scorers = new goal_Scorers("Rafiq","Roman",5,20);
+        Assert.assertNotSame(goal_scorers,goal_scorers.updateGoals(27),"The Objects are the same");            
    }
     
     @Test
@@ -58,48 +49,28 @@ public class Rugby_player_test {
         //Confirming that these objects are different
         //The Object is not updated or modified but a new object was returned
         
-      player = new Rugby_player( "900125","Imo","Sturks",convertDate("1990-09-23"), "A", 21, "right");
+       goal_scorers = new goal_Scorers("Rafiq","Roman",5,20);
                                  
         /********  Get  HashCode   *****************/        
         //return hascode as a string the is an easy way of doing this
         // all u have to do is state the object preceeded with a dot hashcode 
         //*** E.g object.hashcode() ***
-        String num1 = Integer.toHexString(System.identityHashCode(player)) ;        
-        String num2 = Integer.toHexString(System.identityHashCode(player.updateAgeGroup(19)));
+        String num1 = Integer.toHexString(System.identityHashCode(goal_scorers)) ;        
+        String num2 = Integer.toHexString(System.identityHashCode(goal_scorers.updateGamesPlayed(4)));
         
         //Different hashcodes mean that it isnt the same object
         Assert.assertNotEquals(num1,num2,"Objects are same");
         
     }
-
-    
-    public Date convertDate(String strDate)
-    {
-        Date date = null;
-        strDate += " 00:00:00.0";
-                
-        SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"); 
-        try
-        {        
-             date = dt.parse(strDate); 
-        }
-        catch(Exception ex)
-        {
-            
-        }
-        SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd");
-        
-        
-        return date;
-    }
     
     @BeforeClass
     public static void setUpClass() throws Exception {
+        
     }
 
     @AfterClass
     public static void tearDownClass() throws Exception {
-        player = null;
+        goal_scorers = null;
     }
 
     @BeforeMethod

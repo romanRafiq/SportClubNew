@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.sportsclubimmutable.domainTest.Players;
+package com.sportsclubimmutable.domainTest.Employees;
 
-import com.sportClub.domain.Model.classes.ImmutableClasses.Players.Soccer_player;
+
+
+import com.sportClub.domain.Model.classes.ImmutableClasses.Employees.Other_Employees;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.testng.Assert;
@@ -21,34 +23,33 @@ import org.testng.annotations.Test;
  *
  * @author Roman
  */
-public class Soccer_player_test {
+public class Other_Employee_test {
     
-    private static Soccer_player player;    
-    private Date date;
+    private static Other_Employees other_employee;
     
-    public Soccer_player_test() {
+    public Other_Employee_test() {
     }
-    
-    
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-     @Test
+      @Test
     public void testImmutable() {     
         
-        player = new Soccer_player( "900125","Fiki","Roman",convertDate("1990-01-10"), "A", 23, "Striker","Right");        
+        other_employee = new Other_Employees( "900125","Eesa","Abrahams",convertDate("1990-01-10"),900231,"Admin","Secetary");
+        
+        
         //Test the object was created
-        Assert.assertEquals(player.getName(),"Fiki","Error names werent the same"); 
-        Assert.assertEquals(player.getDOB(),convertDate("1990-01-10"), "Dates aren't the same");
+        Assert.assertEquals(other_employee.getName(),"Eesa","Error names werent the same"); 
+        Assert.assertEquals(other_employee.getDOB(),convertDate("1990-01-10"), "Dates aren't the same");
     }    
         
    
     @Test
     public void ObjectsAreNotTheSame() {                
         //Test objects aren't the same
-       player = new Soccer_player( "900125","Fiki","Roman",convertDate("1990-01-10"), "A", 23, "Striker","Right");
-        Assert.assertNotSame(player,player.updateDivision("B"),"The Objects are the same");            
+       other_employee = new Other_Employees( "900125","Eesa","Abrahams",convertDate("1990-01-10"),900231,"Admin","Secetary");
+        Assert.assertNotSame(other_employee,other_employee.updateName("Nefta"),"The Objects are the same");            
    }
     
     @Test
@@ -57,14 +58,14 @@ public class Soccer_player_test {
         //Confirming that these objects are different
         //The Object is not updated or modified but a new object was returned
         
-      player = new Soccer_player( "900125","Fiki","Roman",convertDate("1990-09-23"), "A", 21,"Defender","right");
+      other_employee = new Other_Employees( "900125","Eesa","Abrahams",convertDate("1990-01-10"),900231,"Admin","Secetary");
                                  
         /********  Get  HashCode   *****************/        
         //return hascode as a string the is an easy way of doing this
         // all u have to do is state the object preceeded with a dot hashcode 
         //*** E.g object.hashcode() ***
-        String num1 = Integer.toHexString(System.identityHashCode(player)) ;        
-        String num2 = Integer.toHexString(System.identityHashCode(player.updateAgeGroup(19)));
+        String num1 = Integer.toHexString(System.identityHashCode(other_employee)) ;        
+        String num2 = Integer.toHexString(System.identityHashCode(other_employee.changePosition("Manager")));
         
         //Different hashcodes mean that it isnt the same object
         Assert.assertNotEquals(num1,num2,"Objects are same");
@@ -91,7 +92,7 @@ public class Soccer_player_test {
         
         return date;
     }
-    
+
     @BeforeClass
     public static void setUpClass() throws Exception {
     }

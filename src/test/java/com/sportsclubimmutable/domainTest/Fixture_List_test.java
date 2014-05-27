@@ -1,4 +1,4 @@
-package com.mycompany.sportsclubimmutable.domainTest;
+package com.sportsclubimmutable.domainTest;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

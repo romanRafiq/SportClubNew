@@ -1,12 +1,16 @@
-package com.mycompany.sportsclubimmutable.domainTest.PlayerRecords;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-import com.sportClub.domain.Model.classes.ImmutableClasses.PlayerRecords.Try_Scorers;
+package com.sportsclubimmutable.domainTest.Employees;
+
+
+
+import com.sportClub.domain.Model.classes.ImmutableClasses.Employees.Coach;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -19,30 +23,32 @@ import org.testng.annotations.Test;
  *
  * @author Roman
  */
-public class Try_ScorersTest {
+public class Coach_test {
     
-    private static Try_Scorers try_scorers;
+     private static Coach coach;
     
-    public Try_ScorersTest() {
+    public Coach_test() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-    public void testImmutable() {                
-        try_scorers = new Try_Scorers("Sharief","Roman",3,9);
+    public void testImmutable() {     
+        
+        coach = new Coach( "900125","Lester","Nesta",convertDate("1990-01-10"), "Cricket","A", 21);
         
         //Test the object was created
-        Assert.assertEquals(try_scorers.getName(),"Sharief","Error names weren't the same");                                     
+        Assert.assertEquals(coach.getName(),"Lester","Error names werent the same"); 
+        Assert.assertEquals(coach.getDOB(),convertDate("1990-01-10"), "Dates aren't the same");
     }    
+        
    
     @Test
     public void ObjectsAreNotTheSame() {                
         //Test objects aren't the same
-       try_scorers = new Try_Scorers("Sharief","Roman",3,9);
-        Assert.assertNotSame(try_scorers  ,try_scorers.updateGamesPlayed(4),"The Objects are the same");  
-        
+       coach = new Coach("900125","Lester","Nesta",convertDate("1990-01-10"), "Cricket","A", 21);
+        Assert.assertNotSame(coach,coach.updateDivision("B"),"The Objects are the same");            
    }
     
     @Test
@@ -51,27 +57,46 @@ public class Try_ScorersTest {
         //Confirming that these objects are different
         //The Object is not updated or modified but a new object was returned
         
-       try_scorers = new Try_Scorers("Sharief","Roman",3,9);
+      coach = new Coach( "900125","Lester","Nesta",convertDate("1990-01-10"), "Cricket","A", 21);
                                  
         /********  Get  HashCode   *****************/        
         //return hascode as a string the is an easy way of doing this
         // all u have to do is state the object preceeded with a dot hashcode 
         //*** E.g object.hashcode() ***
-        String num1 = Integer.toHexString(System.identityHashCode(try_scorers)) ;        
-        String num2 = Integer.toHexString(System.identityHashCode(try_scorers.updateTries(5)));
+        String num1 = Integer.toHexString(System.identityHashCode(coach)) ;        
+        String num2 = Integer.toHexString(System.identityHashCode(coach.updateAgeGroup(19)));
         
         //Different hashcodes mean that it isnt the same object
         Assert.assertNotEquals(num1,num2,"Objects are same");
         
     }
 
+    
+    public Date convertDate(String strDate)
+    {
+        Date date = null;
+        strDate += " 00:00:00.0";
+                
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"); 
+        try
+        {        
+             date = dt.parse(strDate); 
+        }
+        catch(Exception ex)
+        {
+            
+        }
+        SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd");
+        
+        
+        return date;
+    }
     @BeforeClass
     public static void setUpClass() throws Exception {
     }
 
     @AfterClass
     public static void tearDownClass() throws Exception {
-        try_scorers = null;
     }
 
     @BeforeMethod

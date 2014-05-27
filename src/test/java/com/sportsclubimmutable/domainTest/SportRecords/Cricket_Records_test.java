@@ -4,13 +4,9 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.sportsclubimmutable.domainTest.Employees;
+package com.sportsclubimmutable.domainTest.SportRecords;
 
-
-
-import com.sportClub.domain.Model.classes.ImmutableClasses.Employees.Other_Employees;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.sportClub.domain.Model.classes.ImmutableClasses.Sport_records.Cricket_records;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -23,33 +19,34 @@ import org.testng.annotations.Test;
  *
  * @author Roman
  */
-public class Other_Employee_test {
+public class Cricket_Records_test {
     
-    private static Other_Employees other_employee;
-    
-    public Other_Employee_test() {
+    private static Cricket_records cricket_record;
+            
+    public Cricket_Records_test() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-      @Test
+    @Test
     public void testImmutable() {     
         
-        other_employee = new Other_Employees( "900125","Eesa","Abrahams",convertDate("1990-01-10"),900231,"Admin","Secetary");
-        
-        
+        cricket_record = new Cricket_records( "A",17,8,9,2);
+      
         //Test the object was created
-        Assert.assertEquals(other_employee.getName(),"Eesa","Error names werent the same"); 
-        Assert.assertEquals(other_employee.getDOB(),convertDate("1990-01-10"), "Dates aren't the same");
+        Assert.assertEquals(cricket_record.getDivision(),"A","Error names werent the same"); 
+        Assert.assertEquals(cricket_record.getWins(),8, "Wins aren't the same");
+        
+        Assert.assertNotNull(cricket_record);
     }    
         
    
     @Test
     public void ObjectsAreNotTheSame() {                
         //Test objects aren't the same
-       other_employee = new Other_Employees( "900125","Eesa","Abrahams",convertDate("1990-01-10"),900231,"Admin","Secetary");
-        Assert.assertNotSame(other_employee,other_employee.updateName("Nefta"),"The Objects are the same");            
+       cricket_record = new Cricket_records( "A",17,8,9,2);
+        Assert.assertNotSame(cricket_record,cricket_record.updateDraws(3),"The Objects are the same");            
    }
     
     @Test
@@ -58,39 +55,20 @@ public class Other_Employee_test {
         //Confirming that these objects are different
         //The Object is not updated or modified but a new object was returned
         
-      other_employee = new Other_Employees( "900125","Eesa","Abrahams",convertDate("1990-01-10"),900231,"Admin","Secetary");
+      cricket_record = new Cricket_records( "A",17,8,9,2);
                                  
         /********  Get  HashCode   *****************/        
         //return hascode as a string the is an easy way of doing this
         // all u have to do is state the object preceeded with a dot hashcode 
         //*** E.g object.hashcode() ***
-        String num1 = Integer.toHexString(System.identityHashCode(other_employee)) ;        
-        String num2 = Integer.toHexString(System.identityHashCode(other_employee.changePosition("Manager")));
+        String num1 = Integer.toHexString(System.identityHashCode(cricket_record)) ;        
+        String num2 = Integer.toHexString(System.identityHashCode(cricket_record.updateLoses(5)));
+        
+         Assert.assertNotNull(cricket_record.getLoses());
         
         //Different hashcodes mean that it isnt the same object
         Assert.assertNotEquals(num1,num2,"Objects are same");
         
-    }
-
-    
-    public Date convertDate(String strDate)
-    {
-        Date date = null;
-        strDate += " 00:00:00.0";
-                
-        SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"); 
-        try
-        {        
-             date = dt.parse(strDate); 
-        }
-        catch(Exception ex)
-        {
-            
-        }
-        SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd");
-        
-        
-        return date;
     }
 
     @BeforeClass

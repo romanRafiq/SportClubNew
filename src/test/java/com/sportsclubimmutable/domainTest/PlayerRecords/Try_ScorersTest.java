@@ -1,13 +1,12 @@
+package com.sportsclubimmutable.domainTest.PlayerRecords;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-package com.mycompany.sportsclubimmutable.domainTest.SportRecords;
-
-
-import com.sportClub.domain.Model.classes.ImmutableClasses.Sport_records.Soccer_records;
+import com.sportClub.domain.Model.classes.ImmutableClasses.PlayerRecords.Try_Scorers;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -20,34 +19,30 @@ import org.testng.annotations.Test;
  *
  * @author Roman
  */
-public class Soccer_records_test {
+public class Try_ScorersTest {
     
-    private static Soccer_records soccer_records;
+    private static Try_Scorers try_scorers;
     
-    public Soccer_records_test() {
+    public Try_ScorersTest() {
     }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-    @Test
-    public void testImmutable() {     
+     @Test
+    public void testImmutable() {                
+        try_scorers = new Try_Scorers("Sharief","Roman",3,9);
         
-        soccer_records = new Soccer_records( "A",17,8,9,2);
-      
         //Test the object was created
-        Assert.assertEquals(soccer_records.getDivision(),"A","Error names werent the same"); 
-        Assert.assertEquals(soccer_records.getWins(),8, "Wins aren't the same");
-        
-        Assert.assertNotNull(soccer_records);
+        Assert.assertEquals(try_scorers.getName(),"Sharief","Error names weren't the same");                                     
     }    
-        
    
     @Test
     public void ObjectsAreNotTheSame() {                
         //Test objects aren't the same
-       soccer_records = new Soccer_records( "A",17,8,9,2);
-        Assert.assertNotSame(soccer_records,soccer_records.updateDraws(3),"The Objects are the same");            
+       try_scorers = new Try_Scorers("Sharief","Roman",3,9);
+        Assert.assertNotSame(try_scorers  ,try_scorers.updateGamesPlayed(4),"The Objects are the same");  
+        
    }
     
     @Test
@@ -56,27 +51,27 @@ public class Soccer_records_test {
         //Confirming that these objects are different
         //The Object is not updated or modified but a new object was returned
         
-      soccer_records = new Soccer_records( "A",17,8,9,2);
+       try_scorers = new Try_Scorers("Sharief","Roman",3,9);
                                  
         /********  Get  HashCode   *****************/        
         //return hascode as a string the is an easy way of doing this
         // all u have to do is state the object preceeded with a dot hashcode 
         //*** E.g object.hashcode() ***
-        String num1 = Integer.toHexString(System.identityHashCode(soccer_records)) ;        
-        String num2 = Integer.toHexString(System.identityHashCode(soccer_records.updateLoses(5)));
-        
-         Assert.assertNotNull(soccer_records.getLoses());
+        String num1 = Integer.toHexString(System.identityHashCode(try_scorers)) ;        
+        String num2 = Integer.toHexString(System.identityHashCode(try_scorers.updateTries(5)));
         
         //Different hashcodes mean that it isnt the same object
         Assert.assertNotEquals(num1,num2,"Objects are same");
         
     }
+
     @BeforeClass
     public static void setUpClass() throws Exception {
     }
 
     @AfterClass
     public static void tearDownClass() throws Exception {
+        try_scorers = null;
     }
 
     @BeforeMethod

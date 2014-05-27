@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.sportsclubimmutable.domainTest.SportRecords;
+package com.sportsclubimmutable.domainTest.Players;
 
-import com.sportClub.domain.Model.classes.ImmutableClasses.Sport_records.Cricket_records;
+import com.sportClub.domain.Model.classes.ImmutableClasses.Players.Rugby_player;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;
@@ -19,11 +21,14 @@ import org.testng.annotations.Test;
  *
  * @author Roman
  */
-public class Cricket_Records_test {
+public class Rugby_player_test {
     
-    private static Cricket_records cricket_record;
-            
-    public Cricket_Records_test() {
+    
+     private static Rugby_player player;
+    
+    private Date date;
+    
+    public Rugby_player_test() {
     }
 
     // TODO add test methods here.
@@ -32,21 +37,19 @@ public class Cricket_Records_test {
     @Test
     public void testImmutable() {     
         
-        cricket_record = new Cricket_records( "A",17,8,9,2);
-      
-        //Test the object was created
-        Assert.assertEquals(cricket_record.getDivision(),"A","Error names werent the same"); 
-        Assert.assertEquals(cricket_record.getWins(),8, "Wins aren't the same");
+        player = new Rugby_player( "900125","Imo","Sturks",convertDate("1990-01-10"), "A", 21, "Wing");
         
-        Assert.assertNotNull(cricket_record);
+        //Test the object was created
+        Assert.assertEquals(player.getName(),"Imo","Error names werent the same"); 
+        Assert.assertEquals(player.getDOB(),convertDate("1990-01-10"), "Dates aren't the same");
     }    
         
    
     @Test
     public void ObjectsAreNotTheSame() {                
         //Test objects aren't the same
-       cricket_record = new Cricket_records( "A",17,8,9,2);
-        Assert.assertNotSame(cricket_record,cricket_record.updateDraws(3),"The Objects are the same");            
+       player = new Rugby_player( "900125","Imo","Sturks",convertDate("1990-01-10"), "A", 21, "Wing");
+        Assert.assertNotSame(player,player.updateDivision("B"),"The Objects are the same");            
    }
     
     @Test
@@ -55,28 +58,48 @@ public class Cricket_Records_test {
         //Confirming that these objects are different
         //The Object is not updated or modified but a new object was returned
         
-      cricket_record = new Cricket_records( "A",17,8,9,2);
+      player = new Rugby_player( "900125","Imo","Sturks",convertDate("1990-09-23"), "A", 21, "right");
                                  
         /********  Get  HashCode   *****************/        
         //return hascode as a string the is an easy way of doing this
         // all u have to do is state the object preceeded with a dot hashcode 
         //*** E.g object.hashcode() ***
-        String num1 = Integer.toHexString(System.identityHashCode(cricket_record)) ;        
-        String num2 = Integer.toHexString(System.identityHashCode(cricket_record.updateLoses(5)));
-        
-         Assert.assertNotNull(cricket_record.getLoses());
+        String num1 = Integer.toHexString(System.identityHashCode(player)) ;        
+        String num2 = Integer.toHexString(System.identityHashCode(player.updateAgeGroup(19)));
         
         //Different hashcodes mean that it isnt the same object
         Assert.assertNotEquals(num1,num2,"Objects are same");
         
     }
 
+    
+    public Date convertDate(String strDate)
+    {
+        Date date = null;
+        strDate += " 00:00:00.0";
+                
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"); 
+        try
+        {        
+             date = dt.parse(strDate); 
+        }
+        catch(Exception ex)
+        {
+            
+        }
+        SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd");
+        
+        
+        return date;
+    }
+    
     @BeforeClass
     public static void setUpClass() throws Exception {
     }
 
     @AfterClass
     public static void tearDownClass() throws Exception {
+        player = null;
     }
 
     @BeforeMethod

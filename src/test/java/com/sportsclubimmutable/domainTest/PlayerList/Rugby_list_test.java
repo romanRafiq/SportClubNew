@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.sportsclubimmutable.domainTest.PlayerList;
+package com.sportsclubimmutable.domainTest.PlayerList;
 
-import com.sportClub.domain.Model.classes.ImmutableClasses.Player_Lists.Cricket_list;
-import com.sportClub.domain.Model.classes.ImmutableClasses.Players.Cricket_player;
+
+import com.sportClub.domain.Model.classes.ImmutableClasses.Player_Lists.Rugby_list;
+import com.sportClub.domain.Model.classes.ImmutableClasses.Players.Rugby_player;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,12 +25,11 @@ import org.testng.annotations.Test;
  *
  * @author Roman
  */
-public class Cricket_list_test {
+public class Rugby_list_test {
     
-    //List
-    private static List cricket_player_list = new ArrayList <Cricket_player>();
+    private static List rugby_player_list = new ArrayList<Rugby_player>();
     
-    public Cricket_list_test() {
+    public Rugby_list_test() {
     }
 
     // TODO add test methods here.
@@ -38,24 +38,24 @@ public class Cricket_list_test {
     @Test
     public void testImmutable() {             
         //Object of class That Returns the array
-        Cricket_list soccer_list_Obj = new Cricket_list(cricket_player_list);
+        Rugby_list soccer_list_Obj = new Rugby_list(rugby_player_list);
         
         //Object To be added
-       Cricket_player player = new Cricket_player( "900125","Fiki","Roman",convertDate("1990-01-10"), "A", 23, "Right");        
+       Rugby_player player = new Rugby_player( "900125","Fiki","Roman",convertDate("1990-01-10"), "A", 23, "Wing");        
        
        
        //Size is zero
-       Assert.assertEquals(cricket_player_list.size(),0,"Error List isnt empty"); 
+       Assert.assertEquals(rugby_player_list.size(),0,"Error List isnt empty"); 
                         
         soccer_list_Obj = soccer_list_Obj.addToList(player); 
         
-        cricket_player_list = soccer_list_Obj.getList();
+        rugby_player_list = soccer_list_Obj.getList();
          Assert.assertNotEquals(soccer_list_Obj.hashCode(),soccer_list_Obj.addToList(player).hashCode(),"Error It is still the same object");
                        
         //Test if an object got added
-        Assert.assertEquals(cricket_player_list.size(),1,"Error Nothing was added");
+        Assert.assertEquals(rugby_player_list.size(),1,"Error Nothing was added");
                 
-        player = (Cricket_player)  cricket_player_list.get(0); 
+        player = (Rugby_player)  rugby_player_list.get(0); 
         
         Assert.assertEquals(player.getName(),"Fiki","Error The value in the list is incorrect");
     }    

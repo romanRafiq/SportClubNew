@@ -4,10 +4,9 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.sportsclubimmutable.domainTest.Players;
+package com.sportsclubimmutable.domainTest.Players;
 
-import com.sportClub.domain.Model.classes.ImmutableClasses.Players.Cricket_player;
-import java.text.DateFormat;
+import com.sportClub.domain.Model.classes.ImmutableClasses.Players.Soccer_player;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.testng.Assert;
@@ -22,25 +21,25 @@ import org.testng.annotations.Test;
  *
  * @author Roman
  */
-public class Cricket_player_test {
+public class Soccer_player_test {
     
-    private static Cricket_player player;
-    
+    private static Soccer_player player;    
     private Date date;
     
-    public Cricket_player_test() {
+    public Soccer_player_test() {
     }
+    
+    
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-    @Test
+     @Test
     public void testImmutable() {     
         
-        player = new Cricket_player( "900125","Imo","Sturks",convertDate("1990-01-10"), "A", 21, "right");
-        
+        player = new Soccer_player( "900125","Fiki","Roman",convertDate("1990-01-10"), "A", 23, "Striker","Right");        
         //Test the object was created
-        Assert.assertEquals(player.getName(),"Imo","Error names werent the same"); 
+        Assert.assertEquals(player.getName(),"Fiki","Error names werent the same"); 
         Assert.assertEquals(player.getDOB(),convertDate("1990-01-10"), "Dates aren't the same");
     }    
         
@@ -48,7 +47,7 @@ public class Cricket_player_test {
     @Test
     public void ObjectsAreNotTheSame() {                
         //Test objects aren't the same
-       player = new Cricket_player( "900125","Imo","Sturks",convertDate("1990-04-23"), "A", 21, "right");
+       player = new Soccer_player( "900125","Fiki","Roman",convertDate("1990-01-10"), "A", 23, "Striker","Right");
         Assert.assertNotSame(player,player.updateDivision("B"),"The Objects are the same");            
    }
     
@@ -58,7 +57,7 @@ public class Cricket_player_test {
         //Confirming that these objects are different
         //The Object is not updated or modified but a new object was returned
         
-      player = new Cricket_player( "900125","Imo","Sturks",convertDate("1990-09-23"), "A", 21, "right");
+      player = new Soccer_player( "900125","Fiki","Roman",convertDate("1990-09-23"), "A", 21,"Defender","right");
                                  
         /********  Get  HashCode   *****************/        
         //return hascode as a string the is an easy way of doing this
@@ -92,13 +91,13 @@ public class Cricket_player_test {
         
         return date;
     }
+    
     @BeforeClass
     public static void setUpClass() throws Exception {
     }
 
     @AfterClass
     public static void tearDownClass() throws Exception {
-        player = null;
     }
 
     @BeforeMethod
