@@ -6,8 +6,8 @@
 
 package com.mycompany.sportsclubimmutable.PlayerList;
 
-import com.Model.classes.ImmutableClasses.Player_Lists.Cricket_list;
-import com.Model.classes.ImmutableClasses.Players.Cricket_player;
+import com.mycompany.sportsclubnew.sportClub.domain.Model.classes.ImmutableClasses.Player_Lists.Cricket_list;
+import com.mycompany.sportsclubnew.sportClub.domain.Model.classes.ImmutableClasses.Players.Cricket_player;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;

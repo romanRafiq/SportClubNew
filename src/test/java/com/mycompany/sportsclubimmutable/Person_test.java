@@ -7,7 +7,7 @@ package com.mycompany.sportsclubimmutable;
  */
 
 
-import com.Model.classes.ImmutableClasses.Person;
+import com.mycompany.sportsclubnew.sportClub.domain.Model.classes.ImmutableClasses.Person;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.testng.Assert;

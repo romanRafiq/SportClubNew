@@ -6,7 +6,7 @@
 
 package com.mycompany.sportsclubimmutable.PlayerRecords;
 
-import com.Model.classes.ImmutableClasses.PlayerRecords.goal_Scorers;
+import com.mycompany.sportsclubnew.sportClub.domain.Model.classes.ImmutableClasses.PlayerRecords.goal_Scorers;
 import org.testng.Assert;
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterClass;

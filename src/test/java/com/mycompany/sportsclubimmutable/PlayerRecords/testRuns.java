@@ -7,7 +7,7 @@ package com.mycompany.sportsclubimmutable.PlayerRecords;
  */
 
 //import com.AppConfig.AppConfig;
-import com.Model.classes.ImmutableClasses.PlayerRecords.Batsman_runs;
+import com.mycompany.sportsclubnew.sportClub.domain.Model.classes.ImmutableClasses.PlayerRecords.Batsman_runs;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.testng.Assert;
